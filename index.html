@@ -327,5 +327,34 @@
     <script src="./assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="./assets/vendor/aos/aos.js"></script>
     <script src="./assets/scripts/index.js"></script>
+
+    <div class="chat-bubble" onclick="toggleChatbox()">
+      <i class="bi bi-chat-dots"></i>
+    </div>
+
+    <div class="chat-box" id="chatBox" style="display: none">
+      <div class="chat-header">
+        <h5>Bem-vindo à Milla Internet!</h5>
+        <button onclick="toggleChatbox()" class="close-btn">&times;</button>
+      </div>
+      <div class="chat-content">
+        <div class="chat-messages">
+          <p class="chat-response">
+            Olá! Como podemos ajudar você hoje? 🚀<br />Estamos aqui para esclarecer suas dúvidas sobre nossos planos de
+            internet!
+          </p>
+          <button onclick="chatResponse('online')" class="cta-button">👩‍💻 Atendimento online</button>
+          <button onclick="chatResponse('whatsapp')" class="cta-button">📱 Contato por WhatsApp</button>
+          <button onclick="chatResponse('extra2')" class="cta-button">🌟 Opção Extra 2</button>
+          <button onclick="chatResponse('extra3')" class="cta-button">✨ Opção Extra 3</button>
+        </div>
+        <div id="chat-message-area" style="display: none">
+          <input type="text" class="chat-input" placeholder="Digite sua mensagem..." />
+          <button onclick="sendMessage()" class="send-button">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
