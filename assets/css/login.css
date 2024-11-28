@@ -1,0 +1,458 @@
+:root {
+  --dark-bg: #0a0616;
+  --card-bg: #1a0b2e;
+  --primary: #a12568;
+  --text-light: #fff;
+  --text-dim: rgba(255, 255, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--dark-bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+/* Seção Espacial (70%) */
+.space-section {
+  width: 70%;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+#stars-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1; /* Aumentado de 0.8 para 1 */
+}
+
+/* Remover todo o código relacionado a star-layer */
+.star-layer,
+.star-layer::after,
+.star-layer:nth-child(1),
+.star-layer:nth-child(2),
+.star-layer:nth-child(3) {
+  display: none;
+}
+
+.space-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nebula {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  mix-blend-mode: screen;
+}
+
+.nebula-1 {
+  background-color: rgba(161, 37, 104, 0.2);
+  transform: rotate(30deg);
+}
+
+.nebula-2 {
+  background-color: rgba(59, 24, 95, 0.2);
+  animation-delay: -10s;
+  transform: rotate(-20deg);
+}
+
+.nebula-3 {
+  background-color: rgba(42, 9, 68, 0.2);
+  animation-delay: -20s;
+  transform: rotate(10deg);
+}
+
+.space-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Remover os estilos dos planetas */
+.planets {
+  display: none;
+}
+
+/* Adicionar estilos do foguete */
+.rocket {
+  position: relative;
+  height: 300px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rocket-img {
+  height: 200px;
+  transform-origin: center;
+  animation: rocketFloat 6s ease-in-out infinite;
+}
+
+@keyframes rocketFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-5deg);
+  }
+}
+
+.space-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.space-content p {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+}
+
+.back-button {
+  position: fixed; /* Alterado de absolute para fixed */
+  z-index: 10; /* Garantir que fique acima de outros elementos */
+  top: 2rem;
+  left: 2rem;
+  color: var(--text-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 2px;
+  font-weight: 500; /* Adicionado para melhor visibilidade */
+}
+
+.back-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: white; /* Alterado de var(--primary) para white */
+  transition: width 0.3s ease;
+}
+
+.back-button:hover::after {
+  width: 100%;
+}
+
+.back-button:hover {
+  color: white; /* Mantém a cor branca no hover */
+}
+
+/* Seção do Formulário (30%) */
+.form-section {
+  width: 30%;
+  background: var(--card-bg);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-content {
+  width: 100%;
+  max-width: 400px;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 2rem;
+}
+
+.form-content h2 {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.input-group:focus-within label {
+  color: var(--text-light);
+}
+
+.input-group i {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 15px;
+  /* Ajustado para considerar a altura do label */
+  top: calc(50% + 12px);
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  z-index: 2;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.input-group input {
+  width: 100%;
+  height: 46px;
+  padding: 0 15px 0 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-light);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-size: 0.95rem;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(161, 37, 104, 0.15);
+}
+
+.input-group input:focus + i {
+  color: var(--primary);
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-dim);
+}
+
+.forgot-link {
+  color: var(--primary) !important; /* Mantém roxo sempre */
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.forgot-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.forgot-link:hover::after {
+  width: 100%;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+button[type="submit"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: -1;
+}
+
+button[type="submit"]:hover {
+  background: var(--primary);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(161, 37, 104, 0.5);
+}
+
+button[type="submit"]:hover::before {
+  transform: translateX(100%);
+}
+
+button[type="submit"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(161, 37, 104, 0.3);
+}
+
+.register-link {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-dim);
+}
+
+.register-link a {
+  color: var(--primary) !important; /* Mantém roxo sempre */
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.register-link a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.register-link a:hover::after {
+  width: 100%;
+}
+
+@keyframes nebulaMove {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes starPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes cometFall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(35deg);
+  }
+  10% {
+    opacity: var(--comet-opacity, 1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(200vw, 200vh) rotate(35deg);
+  }
+}
+
+@keyframes cometFallNew {
+  0% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(45deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) translateY(200%) rotate(45deg);
+  }
+}
+
+.comet {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  will-change: transform, opacity;
+  animation: cometFall var(--comet-duration, 3s) cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  pointer-events: none;
+  top: var(--start-y, -10%);
+  left: var(--start-x, -10%);
+}
+
+.comet::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.comet.yellow::before {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 150, 0) 0%,
+    rgba(255, 255, 150, 0.3) 50%,
+    rgba(255, 255, 150, 1) 100%
+  );
+  box-shadow: 0 0 20px rgba(255, 255, 150, 0.8);
+}
+
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+
+  .space-section {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .form-section {
+    width: 100%;
+    height: 60vh;
+  }
+}

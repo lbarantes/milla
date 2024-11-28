@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Milla Internet</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <!-- Seção Espacial (70%) -->
+      <div class="space-section">
+        <div class="space-background">
+          <div class="nebula nebula-1"></div>
+          <div class="nebula nebula-2"></div>
+          <div class="nebula nebula-3"></div>
+        </div>
+        <canvas id="stars-canvas"></canvas>
+        <div class="space-content">
+          <div class="rocket">
+            <img src="./assets/images/rocket.png" alt="Foguete" class="rocket-img" />
+          </div>
+          <h1>Bem-vindo à<br />Milla Internet</h1>
+          <p>Navegue na velocidade da luz</p>
+        </div>
+        <a href="index.html" class="back-button">
+          <i class="bi bi-arrow-left"></i>
+          Voltar ao site
+        </a>
+      </div>
+
+      <!-- Seção do Formulário (30%) -->
+      <div class="form-section">
+        <div class="form-content">
+          <img src="./assets/images/logo.png" alt="Milla Logo" class="logo" />
+          <h2>Login</h2>
+          <form id="loginForm">
+            <div class="input-group">
+              <label for="email">Email</label>
+              <i class="bi bi-envelope"></i>
+              <input type="email" id="email" placeholder="usuario@email.com" required />
+            </div>
+            <div class="input-group">
+              <label for="password">Senha</label>
+              <i class="bi bi-lock"></i>
+              <input type="password" id="password" placeholder="••••••••" required />
+            </div>
+            <div class="form-options">
+              <label>
+                <input type="checkbox" />
+                <span>Lembrar-me</span>
+              </label>
+              <a href="#" class="forgot-link">Esqueceu a senha?</a>
+            </div>
+            <button type="submit">Entrar</button>
+          </form>
+          <div class="register-link">Não tem uma conta? <a href="register.html">Criar conta</a></div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/scripts/login.js"></script>
+  </body>
+</html>

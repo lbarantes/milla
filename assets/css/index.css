@@ -57,6 +57,7 @@ body {
   }
 
   .dropdown-menu {
+    width: 200px;
     margin-top: 0;
     animation: fadeIn 0.3s ease;
     background: rgba(255, 255, 255, 0.95);
