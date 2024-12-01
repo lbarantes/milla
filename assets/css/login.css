@@ -180,6 +180,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
 }
 
 .form-content {
@@ -258,13 +259,36 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
+.input-group input:invalid:not(:placeholder-shown) {
+  border-color: #ff4444;
+}
+
+.input-group input:valid:not(:placeholder-shown) {
+  border-color: #00c851;
+}
+
 .form-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-  color: var(--text-dim);
 }
+
+/* Remover os estilos específicos do registro */
+
+/* Remover estas regras que estão causando o conflito */
+/* #registerForm .input-group,
+#registerForm .form-options {
+  display: none;
+} */
+
+/* #registerForm .input-group {
+  margin-bottom: 1rem;
+}
+
+#registerForm .form-options {
+  margin: 1rem 0;
+} */
 
 .forgot-link {
   color: var(--primary) !important; /* Mantém roxo sempre */
