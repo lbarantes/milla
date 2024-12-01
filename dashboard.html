@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Milla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar">
+        <div class="user-profile">
+          <img src="../assets/images/avatar-placeholder.png" alt="Foto do usuário" />
+          <span class="user-name">João Silva</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item" data-text="Suporte Técnico">
+            <i class="fas fa-headset"></i>
+          </a>
+          <a href="#" class="nav-item" data-text="Faturas e Pagamentos">
+            <i class="fas fa-file-invoice"></i>
+          </a>
+          <a href="#" class="nav-item" data-text="Configurações">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="#" class="nav-item" data-text="Monitoramento">
+            <i class="fas fa-chart-line"></i>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <h2>Dashboard</h2>
+        </header>
+        <div class="content-body">
+          <div class="dashboard-grid">
+            <!-- Informações do Plano -->
+            <div class="stat-card plan-info">
+              <div class="plan-header">
+                <i class="fas fa-cube"></i>
+                <h3>Plano Atual</h3>
+              </div>
+              <div class="stat-info">
+                <h2 class="plan-name">Fibra 500 Mega</h2>
+                <div class="plan-details">
+                  <div class="plan-detail-item">
+                    <i class="fas fa-download"></i>
+                    <div class="detail-info">
+                      <span class="detail-label">Download</span>
+                      <span class="detail-value">500 Mbps</span>
+                    </div>
+                  </div>
+                  <div class="plan-detail-item">
+                    <i class="fas fa-upload"></i>
+                    <div class="detail-info">
+                      <span class="detail-label">Upload</span>
+                      <span class="detail-value">250 Mbps</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="upgrade-plan-btn">
+                  <i class="fas fa-rocket"></i>
+                  Fazer Upgrade do Plano
+                </button>
+              </div>
+            </div>
+
+            <!-- Fatura Atual -->
+            <div class="stat-card">
+              <div class="invoice-header">
+                <div class="invoice-header-icon">
+                  <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="invoice-header-body">
+                  <h3>Fatura Atual</h3>
+                  <span class="due-date">Vence em 10 dias</span>
+                </div>
+              </div>
+              <div class="invoice-body">
+                <div class="invoice-amount">
+                  <span class="amount">R$ 129,90</span>
+                  <span class="period">Mensal</span>
+                </div>
+                <div class="payment-actions">
+                  <button class="action-btn pay-now-btn">
+                    <i class="fas fa-credit-card"></i>
+                    Pagar Agora
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Velocidade Atual -->
+            <div class="stat-card speed-info">
+              <div class="speed-header">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Velocidade Atual</h3>
+              </div>
+              <div class="stat-info">
+                <div class="speed-readings">
+                  <div class="download-speed">
+                    <i class="fas fa-download"></i>
+                    <span class="speed-value">480</span>
+                    <span class="speed-unit">Mbps</span>
+                    <span class="speed-label">Download</span>
+                  </div>
+                  <div class="upload-speed">
+                    <i class="fas fa-upload"></i>
+                    <span class="speed-value">240</span>
+                    <span class="speed-unit">Mbps</span>
+                    <span class="speed-label">Upload</span>
+                  </div>
+                </div>
+                <button class="speed-test-btn">Realizar Teste</button>
+              </div>
+            </div>
+
+            <!-- Chamados Técnicos -->
+            <div class="recent-tickets">
+              <div class="section-header">
+                <h3>Chamados Técnicos</h3>
+                <a href="#" class="view-all">Ver Todos</a>
+              </div>
+              <div class="ticket-list">
+                <div class="ticket-item">
+                  <div class="ticket-info">
+                    <h4>Instabilidade na Conexão</h4>
+                    <p>Aberto em: Hoje, 14:30</p>
+                  </div>
+                  <span class="ticket-status in-progress">Em Atendimento</span>
+                </div>
+                <div class="ticket-item">
+                  <div class="ticket-info">
+                    <h4>Troca de Senha WiFi</h4>
+                    <p>Aberto em: Ontem, 16:45</p>
+                  </div>
+                  <span class="ticket-status resolved">Resolvido</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

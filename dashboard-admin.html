@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Milla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar">
+        <div class="user-profile">
+          <img src="../assets/images/avatar-placeholder.png" alt="Foto do usuário" />
+          <span class="user-name">João Silva</span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item" data-text="Suporte Técnico">
+            <i class="fas fa-headset"></i>
+          </a>
+          <a href="#" class="nav-item" data-text="Faturas e Pagamentos">
+            <i class="fas fa-file-invoice"></i>
+          </a>
+          <a href="#" class="nav-item" data-text="Configurações">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="#" class="nav-item" data-text="Monitoramento">
+            <i class="fas fa-chart-line"></i>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <h2>Dashboard</h2>
+        </header>
+        <div class="content-body">
+          <div class="dashboard-grid">
+            <!-- Cards de Estatísticas -->
+            <div class="stat-card">
+              <i class="fas fa-ticket-alt"></i>
+              <div class="stat-info">
+                <h3>Tickets Ativos</h3>
+                <p class="stat-number">12</p>
+                <span class="stat-trend positive"> <i class="fas fa-arrow-up"></i> 5% desde ontem </span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <i class="fas fa-clock"></i>
+              <div class="stat-info">
+                <h3>Tempo Médio de Resposta</h3>
+                <p class="stat-number">2h 30min</p>
+                <span class="stat-trend negative"> <i class="fas fa-arrow-down"></i> 10% esta semana </span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <i class="fas fa-check-circle"></i>
+              <div class="stat-info">
+                <h3>Tickets Resolvidos</h3>
+                <p class="stat-number">45</p>
+                <span class="stat-trend positive"> <i class="fas fa-arrow-up"></i> 12% este mês </span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <i class="fas fa-star"></i>
+              <div class="stat-info">
+                <h3>Satisfação do Cliente</h3>
+                <p class="stat-number">4.8/5.0</p>
+                <span class="stat-trend neutral">Sem alterações</span>
+              </div>
+            </div>
+
+            <!-- Tabela de Tickets Recentes -->
+            <div class="dashboard-table">
+              <h3>Tickets Recentes</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Assunto</th>
+                    <th>Status</th>
+                    <th>Prioridade</th>
+                    <th>Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#1234</td>
+                    <td>Problema com acesso</td>
+                    <td><span class="status-badge pending">Pendente</span></td>
+                    <td><span class="priority-badge high">Alta</span></td>
+                    <td>Hoje, 14:30</td>
+                  </tr>
+                  <tr>
+                    <td>#1233</td>
+                    <td>Dúvida sobre fatura</td>
+                    <td><span class="status-badge resolved">Resolvido</span></td>
+                    <td><span class="priority-badge medium">Média</span></td>
+                    <td>Ontem, 16:45</td>
+                  </tr>
+                  <tr>
+                    <td>#1232</td>
+                    <td>Configuração de email</td>
+                    <td><span class="status-badge in-progress">Em Progresso</span></td>
+                    <td><span class="priority-badge low">Baixa</span></td>
+                    <td>23/05, 09:15</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Próximos Vencimentos -->
+            <div class="upcoming-payments">
+              <h3>Próximos Vencimentos</h3>
+              <div class="payment-item">
+                <div class="payment-info">
+                  <h4>Hospedagem - Plano Pro</h4>
+                  <p>Vence em 5 dias</p>
+                </div>
+                <div class="payment-amount">
+                  <span>R$ 99,90</span>
+                  <button class="pay-now-btn">Pagar Agora</button>
+                </div>
+              </div>
+              <div class="payment-item">
+                <div class="payment-info">
+                  <h4>Domínio - exemplo.com.br</h4>
+                  <p>Vence em 15 dias</p>
+                </div>
+                <div class="payment-amount">
+                  <span>R$ 40,00</span>
+                  <button class="pay-now-btn">Pagar Agora</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Removido o event listener do sidebar-toggle
+
+      // Atualizar script para gerenciar dropdowns
+      document.querySelectorAll(".dropdown-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.classList.toggle("active");
+          const content = button.nextElementSibling;
+          content.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
